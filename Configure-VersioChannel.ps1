@@ -12,7 +12,7 @@
 #>
 [CmdletBinding()]
 [Alias()]
-[OutputType([int])]
+
 Param
 (
     # License Server IP address
@@ -30,4 +30,4 @@ Param
 
 $ActArgs = '{0} {1} --ReRegister "C:\Program Files\Java\jre1.8.0_51\bin\server\jvm.dll"' -f $licenseServer, $licenseServerPort
 $Act = New-ScheduledTaskAction -Execute "VersioRM.exe" -Argument $ActArgs
-#Set-ScheduledTask "VersioRM" -Action $Act -User "NT AUTHORITY\LOCALSERVICE"
+Set-ScheduledTask "VersioRM" -Action $Act -User "NT AUTHORITY\LOCALSERVICE"
